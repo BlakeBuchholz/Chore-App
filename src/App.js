@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./components/Header"
+import ChoreArea from "./components/ChoreArea";
+import Note from "./components/Note";
+import Footer from "./components/Footer";
 
 function App() {
+  const [chores, setChores] = useState([])
+
+  function addChore(newChore) {
+    setChores(prevChores => {
+      return [...prevChores, newChore]
+    })
+  }
+
+  function deleteChore(id) {
+    setChores(prevChores => {
+      return prevChores.filter((choreItem, index) => {
+        return index !== id
+      })
+    })
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <ChoreArea onAdd={addChore}/>
+      {chores.map((choreItem, index) => {
+        return <Note 
+        key={index}
+        id={index}
+        title={choreItem.title}
+        content={choreItem.content}
+        onDelete={deleteChore}
+        />
+      })}
+      <Footer />
     </div>
   );
 }
