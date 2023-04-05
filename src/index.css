@@ -1,4 +1,5 @@
 body {
+  background-color: #000000;
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,16 +14,40 @@ code {
     monospace;
 }
 
+.chore {
+  background: white;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 15rem;
+  margin: 2rem;
+  float: left;
+}
+
 .chore-Header{
+  margin-top: 2rem;
+  font-size: 3rem;
   background-color: black;
-  color: white;
   text-align: center;
+  background: -webkit-linear-gradient(#ffffff, #4b4b4b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.chore-Note-Header {
+  color: black;
 }
 
 .chore-Area {
-  margin-left: 70%;
-  height: 30rem;
+  position: relative;
   width: 30rem;
+  height: 15rem;
+  margin: 2rem auto 3rem auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  border-color: #000000;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
 
 .chore-Title {
@@ -33,22 +58,30 @@ code {
 .chore-Content {
   margin-top: 4rem;
   position: relative;
-  width: 15rem;
+  width: 20rem;
+  height: 8rem;
+  overflow-y: scroll;
 }
 
 .chore-Button {
   position: absolute;
+  margin: 10rem 0rem 0rem 2rem;
   background: #000000;
   color: #fff;
   border: none;
   border-radius: 25%;
-  width: 3rem;
+  width: 4rem;
   height: 2rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
 }
 
-.form.text-area {
-
+.delete-Button {
+  background: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 25%;
+  width: 4rem;
+  height: 2rem;
 }
